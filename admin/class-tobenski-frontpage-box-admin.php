@@ -55,49 +55,108 @@ class Tobenski_Frontpage_Box_Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
+	 * Register the Homebox CPT
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
-	public function enqueue_styles() {
+	public function register_cpt()
+	{
+		$labels = array(
+			'name' => 'Frontpage Boxes',
+			'manu_name' => 'Home Boxes',
+			'singular_name' => 'Frontpage Box',
+			'add_new_item' => 'Tilføj Ny Box',
+			'edit_item' => 'Rediger Box'
+		);
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Tobenski_Frontpage_Box_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Tobenski_Frontpage_Box_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
+		$args = array(
+			'rewrite' => array('slug' => 'homeboxes'),
+			'labels' => $labels,
+			'description' => 'Forside boxes til Det Gamle Posthus',
+			'public' => true,
+			'hierarchical' => false,
+			'menu_position' => 20,
+			'menu-icon' => 'dashicons-admin-comments',
+			'has_archive' => false,
+            'supports' => array(
+                'title', 'editor', 'page-attributes',
+            )
+		);
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/tobenski-frontpage-box-admin.css', array(), $this->version, 'all' );
 
+
+		register_post_type( 'homebox', $args );
+		
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register the Homebox Custom Fields
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.1
 	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Tobenski_Frontpage_Box_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Tobenski_Frontpage_Box_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/tobenski-frontpage-box-admin.js', array( 'jquery' ), $this->version, false );
+	public function register_custom_fields()
+	{
+		acf_add_local_field_group(array(
+			'key' => 'group_tob_jepvwrsiug',
+			'title' => 'Knappen',
+			'fields' => array(
+				array(
+					'key' => 'field_tob_ew8q1nxnah',
+					'label' => 'Knappens Link',
+					'name' => 'tobenski_homebox_link',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_tob_exw0d4sl6k',
+					'label' => 'Tekst På Knappen',
+					'name' => 'tobenski_homebox_button',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'homebox',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'seamless',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
 
 	}
-
 }
