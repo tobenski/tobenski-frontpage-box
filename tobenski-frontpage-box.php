@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Frontpage Box - Det Gamle Posthus
  * Plugin URI:        https://github.com/tobenski/tobenski-frontpage-box
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin adds boxes to the frontpage (or any page ) via the shortcode [tobenski-home-box].
  * Version:           1.0.0
  * Author:            Knud Rihøj
  * Author URI:        https://github.com/tobenski/
