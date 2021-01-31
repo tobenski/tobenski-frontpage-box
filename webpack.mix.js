@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 
-mix.postCss('resources/css/public.css', 'public/css/tobenski-frontbage-box-public.css', [
+mix.postCss('resources/css/public.css', 'public/css/tobenski-frontpage-box-public.css', [
 	require('tailwindcss'),
 	require('postcss-nested')
 ])

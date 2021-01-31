@@ -60,20 +60,21 @@ class Tobenski_Frontpage_Box_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/tobenski-frontpage-box-public.css', array(), $this->version, 'all' );
 	}
 
-
-
 	/**
-	 * Create the shortcode for displaying the take away menu.
+	 * Add a page-template for the frontpage.
 	 *
-	 * @since 1.0.1
+	 * @since 1.0.2
+	 * @param string $template [Template location]
+	 * @return string [Template location]
 	 */
-	public function tobenski_homebox_shortcode_func()
-	{
-		return include plugin_dir_path( __FILE__ ) . 'partials/tobenski-frontpage-box-view.php';
+	public function page_templates( $template ) {
+		if(!is_front_page()) : return $template; endif;
+		
+		$this->enqueue_styles();
+		return plugin_dir_path( __FILE__ ) . 'partials/front-page.php';
 	}
 
 }

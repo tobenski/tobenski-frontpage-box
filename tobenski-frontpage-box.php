@@ -13,10 +13,10 @@
  * @package           Tobenski_Frontpage_Box
  *
  * @wordpress-plugin
- * Plugin Name:       Frontpage Box - Det Gamle Posthus
+ * Plugin Name:       Det Gamle Posthus - Frontpage Box
  * Plugin URI:        https://github.com/tobenski/tobenski-frontpage-box
- * Description:       This plugin adds boxes to the frontpage (or any page ) via the shortcode [tobenski-home-box].
- * Version:           1.0.0
+ * Description:       This plugin adds boxes to the frontpage.
+ * Version:           1.0.2
  * Author:            Knud Rihøj
  * Author URI:        https://github.com/tobenski/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'TOBENSKI_FRONTPAGE_BOX_VERSION', '1.0.0' );
+define( 'TOBENSKI_FRONTPAGE_BOX_VERSION', '1.0.2' );
 
 /**
  * The code that runs during plugin activation.

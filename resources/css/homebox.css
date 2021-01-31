@@ -1,0 +1,122 @@
+.boxes-container {
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply right-0;
+    @apply flex;
+    @apply flex-col; 
+    @apply items-center;
+    @apply justify-center md:justify-start; 
+    @apply w-full;
+    @apply h-full;
+    @apply mt-0;
+    @apply pb-16; 
+    @apply pt-12;
+    @apply px-16;
+}
+.boxes-header {
+    @apply flex-grow-0;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply w-full;
+    @apply mb-6;
+    @apply -ml-8;
+    @apply -mr-8;
+}
+.boxes-header h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+    @apply text-white;
+    @apply font-amiri;
+}
+.boxes-wrapper {
+    @apply flex;
+    @apply flex-grow md:flex-grow;
+    @apply w-full;
+    @apply grid;
+    @apply grid-cols-1 lg:grid-cols-3;
+    @apply gap-8;
+    @apply md:justify-items-center;
+    @apply md:place-content-center;
+    @apply md:items-start;
+    @apply md:justify-start;
+    
+}
+.box {
+    @apply flex;
+    @apply flex-col;
+    @apply items-start;
+    @apply relative;
+    @apply justify-start md:justify-between;
+    @apply text-white;
+    @apply w-80;
+    @apply max-w-full;
+    @apply h-auto;
+}
+.box-header {
+    @apply relative;
+    @apply text-2xl md:text-4xl;
+    @apply font-bold;
+    @apply leading-none;
+    @apply mb-6;
+}
+.box-content {
+    @apply mb-6;
+    @apply text-sm md:text-lg;    
+}
+.box-footer {
+    @apply pb-4;
+
+}
+.box-link {
+    @apply px-6;
+    @apply py-3;
+    @apply mt-4;
+    @apply text-sm;
+    @apply font-bold;
+    @apply text-white;
+    @apply bg-primary;
+    @apply rounded-lg;
+}
+.box-link:hover {
+    @apply bg-primary-hover;
+}
+.box-link::after {
+    content: "";
+    @apply z-10;
+    @apply absolute;
+    @apply inset-0;
+    @apply bg-transparent;
+    @apply pointer-events-auto;
+}
+.box-pointer {
+    @apply absolute;
+    @apply text-secondary-hover;
+    @apply top-0;
+    @apply left-0;
+    @apply -ml-8 md:-ml-10;
+    @apply mt-2 md:mt-3;
+    @apply pr-3;
+    @apply text-xl md:text-3xl;
+    @apply animate-bounce;
+}
+
+@media screen and (max-width: 325px) /* mostly iphone 5 and SE */ {
+    .boxes-container {
+        @apply pt-0;
+        @apply pb-10;
+    }
+    .boxes-header {        
+        @apply my-2;
+    }
+    .boxes-header h1 {
+        @apply text-2xl;
+    }
+    .boxes-wrapper {
+        @apply overflow-y-auto;
+        @apply gap-2;
+    }
+    .box-header {
+        @apply mb-2;
+    }
+}
