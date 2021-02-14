@@ -55,7 +55,7 @@
 }
 .box-header {
     @apply relative;
-    @apply text-2xl md:text-4xl;
+    @apply text-xl md:text-4xl;
     @apply font-bold;
     @apply leading-none;
     @apply mb-6;
@@ -96,7 +96,7 @@
     @apply top-0;
     @apply left-0;
     @apply -ml-8 md:-ml-10;
-    @apply mt-2 md:mt-3;
+    @apply mt-1 md:mt-3;
     @apply pr-3;
     @apply text-xl md:text-3xl;
     @apply animate-bounce;
