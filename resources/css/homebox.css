@@ -45,7 +45,7 @@
 .box {
     @apply flex;
     @apply flex-col;
-    @apply items-start;
+    @apply items-center md:items-start;
     @apply relative;
     @apply justify-start md:justify-between;
     @apply text-white;
@@ -62,7 +62,8 @@
 }
 .box-content {
     @apply mb-6;
-    @apply text-sm md:text-lg;    
+    @apply text-sm md:text-lg;
+    @apply text-center md:text-left;
 }
 .box-footer {
     @apply pb-4;
