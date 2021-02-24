@@ -20,6 +20,7 @@
     @apply items-center;
     @apply justify-center;
     @apply w-full;
+    @apply mt-12;
     @apply mb-6;
     @apply -ml-8;
     @apply -mr-8;
@@ -76,11 +77,11 @@
     @apply text-sm;
     @apply font-bold;
     @apply text-white;
-    @apply bg-primary;
+    @apply bg-secondary;
     @apply rounded-lg;
 }
 .box-link:hover {
-    @apply bg-primary-hover;
+    @apply bg-secondary-hover;
 }
 .box-link::after {
     content: "";
